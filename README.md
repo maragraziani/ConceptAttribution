@@ -5,7 +5,7 @@ This repository contains the main code and link to the datasets necessary to rep
 
 # Datasets
 Three of the four datasets used for the experiments are publicly available and can be downloaded at the following links:
-<li> <\li>
+<li> https://camelyon17.grand-challenge.org/Data/ 
 <li> <\li>
 <li> <\li>
 
