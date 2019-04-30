@@ -5,9 +5,9 @@ This repository contains the main code and link to the datasets necessary to rep
 
 # Datasets
 Three of the four datasets used for the experiments are publicly available and can be downloaded at the following links:
-<li> https://camelyon17.grand-challenge.org/Data/ 
-<li> <\li>
-<li> <\li>
+<li>http://yann.lecun.com/exdb/mnist/
+<li>https://camelyon17.grand-challenge.org/Data/
+<li>https://nucleisegmentationbenchmark.weebly.com/dataset.html
 
 # Experiments on handwritten digits
 
