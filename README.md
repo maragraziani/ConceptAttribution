@@ -22,12 +22,20 @@ The main steps are:
 2. Finding the vector representing the concept in the activation space
 3. Generating concept-based explanations
 
-extract basic concepts representing color and texture from the images in your data. 
+## 1. Extract basic concepts
+Color and texture measures can be extracted from the images in your data to be represented as concepts. 
 See the functions:
 <li> get_color_measure(image, mask=None, type=None, verbose=True) 
 <li> get_texture_measure(image, mask=None, type=None, verbose=True) 
 
-
+## 2. Find the concept vectors
+We compute RCVs by least squares linear regression ofthe concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. 
+ 
+ See the functions:
+ <li> get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold='')
+ <li>  compute linear regression  
+ <li> compute ridge regression
+ <li> compute local linear regression -- not yet supported
 
 # Experiments on handwritten digits
 
