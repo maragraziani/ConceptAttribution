@@ -16,7 +16,13 @@ Three of the four datasets used for the experiments are publicly available and c
 <li>https://nucleisegmentationbenchmark.weebly.com/dataset.html
   
 # Regression Concept Vectors: RCV-tool library  
-With this library you will be able to extract basic concepts representing color and texture from the images in your data. 
+With this library you will be able to apply concept attribution to your task. 
+The main steps are:
+1. Extraction of concept measures
+2. Finding the vector representing the concept in the activation space
+3. Generating concept-based explanations
+
+extract basic concepts representing color and texture from the images in your data. 
 See the functions:
 <li> get_color_measure(image, mask=None, type=None, verbose=True) 
 <li> get_texture_measure(image, mask=None, type=None, verbose=True) 
