@@ -24,7 +24,7 @@ See the functions:
 <li> get_texture_measure(image, mask=None, type=None, verbose=True) 
 
 ### 2.2 Find the concept vectors
-We compute RCVs by least squares linear regression ofthe concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. Different parameters can be specified to compute the regression:  
+We compute RCVs by least squares linear regression of the concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. Different parameters can be specified to compute the regression:  
  1. compute linear regression  
  2. compute ridge regression
  3. compute local linear regression -- not yet supported
@@ -37,7 +37,7 @@ We compute RCVs by least squares linear regression ofthe concept measures for a 
 
  The regression is evaluated in different ways: 
   1. on training or held-out data, with rsquared, mse and adjusted rsquared
-  2. by evaluating angle between to rcvs
+  2. by evaluating angle between two RCVs
   
  See the functions:
  <li> mse(labels, predictions)
@@ -55,18 +55,18 @@ pages = "103865",
 year = "2020",
 issn = "0010-4825",
 doi = "https://doi.org/10.1016/j.compbiomed.2020.103865",
-url = "http://www.sciencedirect.com/science/article/pii/S0010482520302225",
-author = "Graziani M. and Andrearczyk V. and Marchand-Maillet S. and Müller H.",
-keywords = "Machine learning, Interpretability, Biomedical imaging, Deep learning",
+author = "Graziani M. and Andrearczyk V. and Marchand-Maillet S. and Müller H."
 }
 
 or
 
-@inproceedings{graziani2018regression,
+@incollection{graziani2018regression,
   title={Regression concept vectors for bidirectional explanations in histopathology},
   author={Graziani, Mara and Andrearczyk, Vincent and M{\"u}ller, Henning},
   booktitle={Understanding and Interpreting Machine Learning in Medical Image Computing Applications},
-  year={2018}
+  pages={124--132},
+  year={2018},
+  publisher={Springer, Cham}
 }
 
 ```
