@@ -29,16 +29,20 @@ See the functions:
 <li> get_texture_measure(image, mask=None, type=None, verbose=True) 
 
 ## 2. Find the concept vectors
-We compute RCVs by least squares linear regression ofthe concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. 
+We compute RCVs by least squares linear regression ofthe concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. Different parameters can be specified to compute the regression:  
+ 1. compute linear regression  
+ 2. compute ridge regression
+ 3. compute local linear regression -- not yet supported
  
  See the functions:
  <li> get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold='')
- <li>  compute linear regression  
- <li> compute ridge regression
- <li> compute local linear regression -- not yet supported
+ <li> linear_regression(acts, measures, type='linear', evaluation=False, verbose=True)
+ 
+ The regression is evaluated in different ways: 
+  1. on training or held-out data, with rsquared, mse and adjusted rsquared
+  2. by evaluating angle between to rcvs
+  
+ See the functions:
+ <li> mse(labels, predictions)
+ <li> rsquared(labels, predictions)
 
-# Experiments on handwritten digits
-
-# Experiments on breast cancer histopathology
-
-# Experiments on Retinopathy of Prematurity
