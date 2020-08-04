@@ -4,7 +4,7 @@ from color_analysis import *
 from texture_analysis import *
 import keras
 import keras.backend as K
-#import statsmodels.api as sm
+import statsmodels.api as sm
 
 """
 Functions:
@@ -14,8 +14,7 @@ Functions:
 [TEST] get_all_color_measures(image, mask=None)
 [TEST] get_all_texture_measures(image, mask=None)
 
-get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold='')
-[NOT WORKING ATM]
+[IN DEVELOPMENT] get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold='')
 
 get_rcv(acts, measures, type='linear', evaluation=False, verbose=True)
 
@@ -120,9 +119,14 @@ def get_batch_activations(model, layer, batch, labels=None):
     feats = get_layer_output([batch])
     return feats[0]
 
-def get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold=''):
-    print("todo")
-    return None
+def get_activations(model, layer, data, labels=None, pooling=None, param_update=False, batch_size=32, save_fold=''):
+    acts=[]
+    pointer=0
+    while pointer<len(data):
+        acts.append(get_batch_activations(model, layer, data[pointer:pointer+batch_size]))
+        pointer = pointer + batch_size  
+    acts=np.asarray(acts).reshape((len(data),-1))
+    return acts
 
 """Support function for get_rcv"""
 def linear_regression(inputs, y, random_state=1, verbose=False):
