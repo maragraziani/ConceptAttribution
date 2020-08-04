@@ -1,6 +1,8 @@
 # Concept Attribution: Explaining CNN decisions to physicians
 This repository contains the main code and link to the datasets necessary to replicate the experiments in the paper "Concept Attribution: Explaining CNN decisions to physicians" published in Computers in Biology and Medicine, Volume 123, August 2020, 103865
 
+![Alt text](figs/abstract.jpg?raw=true "Concept Attribution summary")
+
 ### 1. Highlights
 
 <li> Feature attribution explains CNNs in terms of the input pixels.
@@ -11,34 +13,34 @@ This repository contains the main code and link to the datasets necessary to rep
 
 ## 2. Usage
 
-With this library you will be able to apply concept attribution to your task. 
+With this library you will be able to apply concept attribution to your task.
 The main steps are:
 1. Extraction of concept measures
 2. Finding the vector representing the concept in the activation space
 3. Generating concept-based explanations
 
 ### 2.1. Extract basic concepts
-Color and texture measures can be extracted from the images in your data to be represented as concepts. 
+Color and texture measures can be extracted from the images in your data to be represented as concepts.
 See the functions:
-<li> get_color_measure(image, mask=None, type=None, verbose=True) 
-<li> get_texture_measure(image, mask=None, type=None, verbose=True) 
+<li> get_color_measure(image, mask=None, type=None, verbose=True)
+<li> get_texture_measure(image, mask=None, type=None, verbose=True)
 
 ### 2.2 Find the concept vectors
 We compute RCVs by least squares linear regression of the concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. Different parameters can be specified to compute the regression:  
  1. compute linear regression  
  2. compute ridge regression
  3. compute local linear regression -- not yet supported
- 
+
  See the functions:
  <li> get_activations(model, layer, data, labels=None, pooling=None, param_update=False, save_fold='')
  <li> linear_regression(acts, measures, type='linear', evaluation=False, verbose=True)
 
 #### 3. Evaluation
 
- The regression is evaluated in different ways: 
+ The regression is evaluated in different ways:
   1. on training or held-out data, with rsquared, mse and adjusted rsquared
   2. by evaluating angle between two RCVs
-  
+
  See the functions:
  <li> mse(labels, predictions)
  <li> rsquared(labels, predictions)
