@@ -11,7 +11,7 @@ This repository contains the main code and link to the datasets necessary to rep
 <li> Nuclei pleomorphism is shown as a relevant factor in breast tumor classification.
 <li> Concept attribution can match clinical expectations to the interpretability of CNNs.
 
-## 2. Usage
+#### 2. Usage
 
 With this library you will be able to apply concept attribution to your task.
 The main steps are:
@@ -19,13 +19,13 @@ The main steps are:
 2. Finding the vector representing the concept in the activation space
 3. Generating concept-based explanations
 
-### 2.1. Extract basic concepts
+##### 2.1. Extract basic concepts
 Color and texture measures can be extracted from the images in your data to be represented as concepts.
 See the functions:
 <li> get_color_measure(image, mask=None, type=None, verbose=True)
 <li> get_texture_measure(image, mask=None, type=None, verbose=True)
 
-### 2.2 Find the concept vectors
+##### 2.2 Find the concept vectors
 We compute RCVs by least squares linear regression of the concept measures for a set of inputs. The concept vector (RCV) represents the direction of greatest increase of the measures for a single continuous concept. Different parameters can be specified to compute the regression:  
  1. compute linear regression  
  2. compute ridge regression
@@ -44,8 +44,18 @@ We compute RCVs by least squares linear regression of the concept measures for a
  See the functions:
  <li> mse(labels, predictions)
  <li> rsquared(labels, predictions)
+  
+#### 4. Install  
+Dependencies 
 
-#### 4. Citations
+cv2.cv2	3.4.0		
+keras	2.1.3		
+numpy	1.13.3		
+skimage	0.13.0		
+tensorflow	1.5.0, 1.5.0	
+statsmodels
+
+#### 5. Cite our work
 
 If you make use of the code, please cite the paper in resulting publications.
 
@@ -73,13 +83,13 @@ or
 
 ```
 
-#### 5. Datasets
+#### 6. Datasets
 Three of the four datasets used for the experiments are publicly available and can be downloaded at the following links:
 <li>http://yann.lecun.com/exdb/mnist/
 <li>https://camelyon17.grand-challenge.org/Data/
 <li>https://nucleisegmentationbenchmark.weebly.com/dataset.html
 
-#### 6. Acknowledgements
+#### 7. Acknowledgements
 
 This work was supported by PROCESS.
 
