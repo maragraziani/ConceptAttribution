@@ -23,6 +23,9 @@ predict_with_rcv maybe?
 compute_mse(labels, predictions)
 compute_rsquared(labels, predictions)
 
+[TO DO] concept_sensitivity
+[TO DO] tcav_score
+[TO DO] br_score
 """
 
 def get_color_measure(image, mask=None, mtype=None, verbose=False):
