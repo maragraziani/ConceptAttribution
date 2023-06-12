@@ -91,7 +91,7 @@ Three of the four datasets used for the experiments are publicly available and c
 
 #### 7. Acknowledgements
 
-This work was supported by PROCESS.
+This work was supported by PROCESS and AI4MEDIA (EU H2020).
 
 ### Contact
 
